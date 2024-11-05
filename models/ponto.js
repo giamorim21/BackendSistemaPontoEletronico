@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 
 //Definir o modelo PONTO
 const Ponto = sequelize.define('Ponto', {
-        id: {
+        id_ponto: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -28,7 +28,7 @@ const Ponto = sequelize.define('Ponto', {
             type: DataTypes.DATE,
             allowNull: false
         }, 
-        loacalizacao: {
+        localizacao: {
             type: DataTypes.STRING,
             allowNull: true
         },

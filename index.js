@@ -4,12 +4,17 @@ const PORT = 3000;
 
 const sequelize = require('./config/db');
 
-sequelize.authenticate()
+const usuario = require('./models/usuario');
+
+const ponto = require('./models/ponto');
+
+sequelize.sync({alter: true})
 .then(() => {
-    console.log("Conexão com o banco de dados realizada com sucesso");
+    console.log("DB sincronizado");
 }).catch((error) => {
-    console.log("Erro ao tentar conectar com o banco de dados: " + error);
+    console.log("Erro ao sincronizar o DB: " + error);
 });
+
 
 // ROTAS
 app.get('/', (req, res) => {
