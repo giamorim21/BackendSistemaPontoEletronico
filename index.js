@@ -2,6 +2,15 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+const sequelize = require('./config/db');
+
+sequelize.authenticate()
+.then(() => {
+    console.log("Conexão com o banco de dados realizada com sucesso");
+}).catch((error) => {
+    console.log("Erro ao tentar conectar com o banco de dados: " + error);
+});
+
 // ROTAS
 app.get('/', (req, res) => {
     res.send("Chamada ao recurso realizada com sucesso");
