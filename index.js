@@ -3,9 +3,7 @@ const app = express();
 const PORT = 3000;
 
 const sequelize = require('./config/db');
-
 const usuario = require('./models/usuario');
-
 const ponto = require('./models/ponto');
 
 sequelize.sync({alter: true})

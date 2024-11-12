@@ -13,7 +13,7 @@ const Ponto = sequelize.define('Ponto', {
             allowNull: false
         },
         comentario: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: true
         },
         anexo: {
